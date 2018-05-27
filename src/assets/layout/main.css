@@ -1,0 +1,52 @@
+/* 全局样式 :global 前缀声明全局*/
+
+/* 暂时先把全部样式写在这里了 */
+
+body {
+    word-wrap: break-word;
+    font: 16px/1.5 Helvetica, Arial;
+    color: #333;
+    -webkit-text-size-adjust: none; 
+}
+
+* {
+    font-family: sans-serif;
+    line-height: 1.4em;
+    margin: 0px;
+    padding: 0px;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-user-select: none;
+    box-sizing: border-box;
+}
+
+:global a {
+    display: inline-block;
+}
+
+:global #root {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+}
+
+:global .flex {
+    display: flex;
+    flex-direction: row;
+}
+
+:global .flex-align-center {
+    align-items: center;
+}
+
+:global .flex-1 {
+    flex: 1;
+}
+
+:global .content {
+    padding: 64px 0px 70px;
+    width: 100%;
+    height: 100%;
+    font-size: 16px;
+}
+
