@@ -6,6 +6,12 @@
 
 react环境基于node环境及其包管理工具npm，配置好node之后，克隆该工程或`package.json`文件，执行`npm install`命令即可安装全部依赖
 
+### 运行方式
+
+* `npm run server` 进入开发调试环境，生成一个本地服务器，可以自动监听代码的更改
+
+* `npm run build` build生成生产环境的代码
+
 ### 项目结构
 
 * `src`目录
