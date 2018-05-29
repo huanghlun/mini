@@ -1,0 +1,25 @@
+.indexItem {
+    padding: 13px;
+    color: #4A4A4A; 
+    font-size: 12px;
+    border-bottom: 1px solid rgba(151, 151, 151, 0.3);
+}
+
+.indexItem p {
+    line-height: 2em;
+}
+
+.itemTitle {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.itemDesc {
+    overflow: hidden;
+    text-overflow: ellipse;
+    white-space: nowrap;
+}
+
+.itemText {
+    margin: 0 10px;
+}

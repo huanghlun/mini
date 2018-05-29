@@ -5,6 +5,7 @@ import Tab from './Tab/Tab.js';
 import Header from './Header/Header.js';
 import Index from './Index/Index.js';
 import Own from './Own/Own.js';
+import Launch from './Launch/Launch.js';
 
 export default class App extends Component {
     constructor(props) {
@@ -26,12 +27,15 @@ export default class App extends Component {
         return (
             <BrowserRouter>
                 <div>
-                    <Route path='/:nav?' component={Header} />
-                    <Switch>
-                        <Route path='/own' component={Own} />
-                        <Route path='/' component={Index}/>
-                    </Switch>
-                    <Route path='/:nav?' component={Tab} />
+                    <Route path='/' component={Launch} exact={true}/>
+                    <div>
+                        <Route path='/:nav' component={Header} />
+                        <Switch>
+                            <Route path='/index' component={Index}/>
+                            <Route path='/own' component={Own} />
+                        </Switch>
+                        <Route path='/:nav' component={Tab} />
+                    </div>
                 </div>
             </BrowserRouter>
         )

@@ -43,6 +43,10 @@ body {
     flex: 1;
 }
 
+:global .flex-none {
+    flex: none;
+}
+
 :global .content {
     padding: 44px 0px 70px;
     width: 100%;
@@ -50,3 +54,12 @@ body {
     font-size: 16px;
 }
 
+:global .job_icon {
+    width: 67px;
+    height: auto;
+}
+
+:global .sex_icon {
+    width: 15px;
+    height: auto;
+}
