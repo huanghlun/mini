@@ -22,7 +22,7 @@ export default class Launch extends Component {
 
     render() {
         return (
-            <div className="page-container">
+            <div>
                 {
                     !this.state.finish ?
                     <img src={require('../../assets/images/begin.png')} style={{width: "100%", height: "100%"}} /> :

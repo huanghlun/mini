@@ -9,12 +9,12 @@ export default class Tab extends Component {
     }
 
     render() { 
-        var nav = this.props.match.params.nav; //获取导航路径名称
+        var path = this.props.location.pathname; //获取导航路径名称
         return (
             <div className={"flex flex-align-center " + styles.tab}>
-                <TabItem page={0} active={nav != "own"}>
+                <TabItem page={0} active={path != "/own"}>
                     <NavLink to="/index">
-                        {nav == "own" ? <img src={require("../../assets/images/post-it.png")} style={{height:"32px", width: "32px"}} />
+                        {path == "/own" ? <img src={require("../../assets/images/post-it.png")} style={{height:"32px", width: "32px"}} />
                         : <img src={require("../../assets/images/post-it-selected.png")} style={{height:"32px", width: "32px"}} />}
                     </NavLink>
                 </TabItem>
@@ -23,9 +23,9 @@ export default class Tab extends Component {
                         <img src={require("../../assets/images/add.png")} style={{height:"54px", width: "54px"}} />
                     </NavLink>
                 </TabItem>
-                <TabItem page={2} active={nav == "own"}>
+                <TabItem page={2} active={path == "/own"}>
                     <NavLink to="/own" >
-                        {nav != "own" ? (<img src={require("../../assets/images/user.png")} style={{height:"32px", width: "32px"}} />)
+                        {path != "/own" ? (<img src={require("../../assets/images/user.png")} style={{height:"32px", width: "32px"}} />)
                         : (<img src={require("../../assets/images/user-selected.png")} style={{height:"32px", width: "32px"}} />) }
                     </NavLink>
                 </TabItem>

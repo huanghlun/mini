@@ -7,9 +7,22 @@ export default class Header extends Component {
     }
 
     render() {
+        var nav = this.props.match.params.nav,
+            header = "";
+        switch(nav) {
+            case "own":
+                header = "我的";
+                break;
+            case "detail":
+                header = "任务详情";
+                break;
+            default:
+                header = "任务认领";
+                break;
+        }
         return (
             <div className={styles.header}>
-                {this.props.match.params.nav == "own" ? "我的" : "任务认领"}
+                {header}
             </div>
         )
     }

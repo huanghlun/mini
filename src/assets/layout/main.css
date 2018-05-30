@@ -21,6 +21,7 @@ body {
 
 :global a {
     display: inline-block;
+    width: 100%;
 }
 
 :global #root {
@@ -62,4 +63,8 @@ body {
 :global .sex_icon {
     width: 15px;
     height: auto;
+}
+
+:global .page-container {
+    padding: 18px 23px;
 }
