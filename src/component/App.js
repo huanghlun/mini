@@ -29,9 +29,9 @@ export default class App extends Component {
             <BrowserRouter>
                 <div>
                     <Route path='/' component={Launch} exact={true}/>
-                    <Route path='/detail' component={Detail}/>
                     <div>
                         <Route path='/:nav' component={Header} />
+                        <Route path='/detail' component={Detail}/>
                         <Switch>
                             <Route path='/index' component={Index}/>
                             <Route path='/own' component={Own} />

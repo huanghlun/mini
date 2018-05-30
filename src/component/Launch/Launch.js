@@ -25,7 +25,13 @@ export default class Launch extends Component {
             <div>
                 {
                     !this.state.finish ?
-                    <img src={require('../../assets/images/begin.png')} style={{width: "100%", height: "100%"}} /> :
+                    (<div>
+                        <img src={require('../../assets/images/launch.png')} 
+                             style={{maxWidth: "100%", height: "auto", 
+                                     position: "fixed", top: "50%", left:"50%", transform: "translate(-50%, -50%)"}} />
+                        <p style={{position: "fixed", bottom: "15px", color: "#8191A7", 
+                                   width: "100%", textAlign: "center"}}>礼轻情意重</p>
+                    </div> ) :
                     (
                         <div>
                             <div style={{width: "100%", marginTop: "153px", textAlign: "center"}}>

@@ -1,0 +1,18 @@
+.selectorContainer {
+    padding: 8px 0px;
+    font-size: 13px !important;
+    text-align: center;
+    border-bottom: 1px solid rgba(151, 151, 151, 0.3);
+}
+
+.selector:first-child {
+    border-right: 1px solid rgba(151, 151, 151, 0.6);
+}
+
+.selector:after {
+    content: url('../../../assets/images/triangle.png');
+    width: 8px;
+    height: 6px;
+    margin-left: 8px;
+    display: inline-block;
+}
