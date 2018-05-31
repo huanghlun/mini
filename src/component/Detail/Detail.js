@@ -62,6 +62,17 @@ export default class Detail extends Component {
                     <p className={styles.sectionTitle}>公开描述：</p>
                     <p className={styles.sectionDesc}>{item.state}</p>
                 </div>
+
+                <div>
+                    <div className="bottom-button">
+                        {/* 点击登录直接跳转，之后要加入qq第三方登录 */}
+                        
+                            <div className={styles.button}>
+                                确认完成
+                            </div>
+                        
+                    </div>
+                </div>
             </div>
         )
     }

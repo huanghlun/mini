@@ -5,6 +5,7 @@
     height: 70px;
     background-color: white;
     border-top: 2px solid rgba(151, 151, 151, 0.3);
+    z-index: 3;
 }
 
 .tabItem {

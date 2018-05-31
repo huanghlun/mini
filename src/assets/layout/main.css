@@ -58,6 +58,7 @@ body {
     height: 100%;
     font-size: 16px;
     position: relative;
+    z-index: 1;
 }
 
 :global .job_icon {
@@ -72,4 +73,10 @@ body {
 
 :global .page-container {
     padding: 18px 23px;
+}
+
+:global .bottom-button {
+    position: fixed;
+    bottom: 30px;
+    width: 100%;
 }
