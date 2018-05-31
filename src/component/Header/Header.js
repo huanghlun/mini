@@ -27,6 +27,9 @@ export default class Header extends Component {
                 header = "任务认领";
                 break;
         }
+        if(nav == 'own') {
+            return <div></div>
+        }
         return (
             <div className={styles.header}>
                 {navigateBack ? <img src={require('../../assets/images/back.png')} 

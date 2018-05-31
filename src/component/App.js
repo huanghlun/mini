@@ -7,6 +7,7 @@ import Index from './Index/Index.js';
 import Own from './Own/Own.js';
 import Launch from './Launch/Launch.js';
 import Detail from './Detail/Detail.js';
+import Receive from './Receive/Receive.js';
 
 export default class App extends Component {
     constructor(props) {
@@ -32,6 +33,7 @@ export default class App extends Component {
                     <div>
                         <Route path='/:nav' component={Header} />
                         <Route path='/detail' component={Detail}/>
+                        <Route path='/receive' component={Receive} />
                         <Switch>
                             <Route path='/index' component={Index}/>
                             <Route path='/own' component={Own} />

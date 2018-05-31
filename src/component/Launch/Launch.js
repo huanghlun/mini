@@ -12,18 +12,6 @@ export default class Launch extends Component {
     }
 
     componentDidMount() {
-        // fetchAPI('receiveTask/', {
-        //     method: 'POST',
-        //     headers: {
-        //         "content-type": "application/x-www-form-urlencoded"
-        //     },
-        //     body: "fulfillerId=1&taskId=1",
-        //     mode: 'cors'
-        // })
-
-        fetchAPI('getMyHelper/?id=1')
-
-
         var that = this;
         setTimeout(() => { //2s后跳转启动页为登录页
             that.setState({
