@@ -16,6 +16,9 @@ export default class Header extends Component {
             header = "",
             navigateBack = false; //是否出现回退按钮
         switch(nav) {
+            case "index":
+                header = "任务认领";
+                break;
             case "own":
                 header = "我的";
                 break;
@@ -23,8 +26,15 @@ export default class Header extends Component {
                 header = "任务详情";
                 navigateBack = true;
                 break;
+            case "receive":
+                navigateBack = true;
+                break;
+            case "finish":
+                navigateBack = true;
+                header = "成功啦！";
+                break;
             default:
-                header = "任务认领";
+                header = "";
                 break;
         }
         if(nav == 'own') {
