@@ -10,6 +10,8 @@ import Detail from './Detail/Detail.js';
 import Receive from './Receive/Receive.js';
 import UserMessage from './Own/userMessage.js';
 import AddressList from './Own/AddressList';
+import Finish from './Finish/Finish.js';
+import Post from './Post/Post.js';
 
 export default class App extends Component {
     constructor(props) {
@@ -32,10 +34,12 @@ export default class App extends Component {
             <BrowserRouter>
                 <div>
                     <Route path='/' component={Launch} exact={true}/>
+                    <Route path='/finish' component={Finish} exact={true}/>
                     <div>
                         <Route path='/:nav' component={Header} />
                         <Route path='/detail' component={Detail}/>
-                        <Route path='/receive' component={Receive} />
+                        <Route path='/post' component={Post} /> 
+                        <Route path='/receive/:note/:workTime' component={Receive} />
                         <Switch>
                             <Route path='/index' component={Index}/>
                             <Route path='/own' component={Own} />
