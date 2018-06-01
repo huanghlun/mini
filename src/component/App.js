@@ -8,6 +8,8 @@ import Own from './Own/Own.js';
 import Launch from './Launch/Launch.js';
 import Detail from './Detail/Detail.js';
 import Receive from './Receive/Receive.js';
+import UserMessage from './Own/userMessage.js';
+import AddressList from './Own/AddressList';
 
 export default class App extends Component {
     constructor(props) {
@@ -37,6 +39,8 @@ export default class App extends Component {
                         <Switch>
                             <Route path='/index' component={Index}/>
                             <Route path='/own' component={Own} />
+                            <Route path='/userMessage' component={UserMessage} />
+                            <Route path='/addressList' component={AddressList} />
                         </Switch>
                         <Route path='/(index|own)' component={Tab} />
                     </div>

@@ -1,0 +1,278 @@
+.content{
+    width: 100%;
+    background: #F9F9F9;
+}
+.box{
+    width: 100%;
+    height: 159px;
+    background-image: url(./img/background.png);
+    background-size: 100% 100%;
+    padding: 0 32px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+.userMessageBox{
+    display: -webkit-box;
+    -webkit-box-pack: start;
+    -webkit-box-align: center;
+}
+.headImg{
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    position: relative;
+    margin-right: 15px;
+}
+.userMessage{
+    height: 46px;
+    display: flex;
+    justify-content: flex-start;
+}
+.userName{
+    font-size: 18px;
+    color: #FFFFFF;
+    letter-spacing: 0;
+    position: relative;
+    margin-right: 10px;
+}
+.userSex{
+    width: 15px;
+    height: 15px;
+    background-size: 100% 100%;
+    position: relative;
+    top: 6px;
+}
+.userWrite{
+    font-size: 12px;
+    color: #FFFFFF;
+    letter-spacing: 0;
+    align-self: flex-end;
+    position: relative;
+    left: -63px;
+}
+.additionalMessageBox{
+    position: relative;
+    bottom: 0;
+    left: 0;
+    display: -webkit-box;
+    -webkit-box-align: center;
+    -webkit-box-pack: center;
+    height: 62px; 
+    width: 100%;
+    font-size: 12px;
+    color: #ffffff;    
+}
+.space{
+    font-size: 16px;
+    position: relative;
+    margin: 0 10px;
+}
+.taskBox{
+    width: 100%;
+    height: 138px;
+    display: flex;
+    flex-direction: column;
+    padding: 0 20px;
+    position: relative;
+    margin-top: 18px;
+    background: #ffffff;
+}
+.title{
+    font-size: 14px;
+    color: #000000;
+    letter-spacing: 0; 
+    position: relative;
+    margin-bottom: 5px;
+    margin-top: 10px;
+}
+.hr{
+    width: 100%;
+    border: .5px solid #E1DFDF;
+    position: relative;
+    margin-bottom: 19px;    
+}
+.iconBox{
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+}
+.toCompletedBox{
+    width: 47px;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+}
+.numberIcon{
+    width: 23px;
+    height: 23px;
+    position: absolute;
+    top: 2px;
+    right: -5px;
+    border: 3px solid #52B4EE;
+    border-radius: 50%;
+    background-color: #ffffff;
+    color: #52B4EE;
+    text-align: center;
+    line-height: 17px;
+    font-size: 12px;
+}
+.toCompletedIcon{
+    background-image: url("./img/to-do.png");
+    background-size: 100% 100%;
+    width: 36px;
+    height: 45px;
+}
+.toCompletedTitle{
+    font-family: PingFangSC-Medium;
+    font-size: 14px;
+    color: #4A4A4A;
+    position: relative;
+    top: 9px;
+}
+.iconBox .space{
+    border: 1px solid #DFDDDD;
+    height: 31px;
+    align-self: center;
+    position: relative;
+    margin-left: 33px;
+    margin-right: 33px;
+}
+.overCompletedBox{
+    width: 47px;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+}
+.overCompletedIcon{
+    background-image: url("./img/task-complete.png");
+    background-size: 100% 100%;
+    width: 40px;
+    height: 45px;
+    position: relative;
+    margin-left: 6px;
+}
+.overCompletedTitle{
+    font-family: PingFangSC-Medium;
+    font-size: 14px;
+    color: #4A4A4A;
+    position: relative;
+    top: 9px;
+}
+.releaseBox{
+    width: 47px;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+}
+.releaseIcon{
+    background-image: url("./img/task-sent.png");
+    background-size: 100% 100%;
+    width: 40px;
+    height: 45px;
+    position: relative;
+    margin-left: 6px;
+}
+.releaseTitle{
+    font-family: PingFangSC-Medium;
+    font-size: 14px;
+    color: #4A4A4A;
+    position: relative;
+    top: 9px;
+}
+.releaseBox .numberIcon{
+    border: 3px solid #52B4EE;
+    border-radius: 50%;
+    background-color: #ffffff;
+    color: #52B4EE;
+    text-align: center;
+    line-height: 17px;
+    font-size: 12px;
+    position: absolute;
+    top: 4px;
+    right: -9px;
+    z-index: 2;
+}
+
+.linkBox{
+    position: relative;
+    margin-top: 15px;
+    width: 100%;
+    height: 100px;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+}
+.addressListBox{
+    padding: 0 15px 0 35px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+}
+.addressListIcon{
+    width: 30px;
+    height: 30px;
+    background-image: url(./img/contacts.png);
+    background-size: 100% 100%;
+    position: relative;
+    margin-right: 34px;
+}
+.addressListTitle{
+    font-family: PingFangSC-Medium;
+    font-size: 16px;
+    color: #4A4A4A;
+}
+.addressListGo{
+    background-image: url("./img/right.png");
+    width: 12px;
+    height: 21px;
+    position: absolute;
+    right: 15px;
+}
+.userCardBox{
+    position: relative;
+    width: 100%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    padding: 0 15px 0 35px;
+}
+.userCardIcon{
+    width: 30px;
+    height: 30px;
+    background-image: url(./img/business-card.png);
+    background-size: 100% 100%;
+    position: relative;
+    margin-right: 34px;
+}
+.userCardTitle{
+    font-family: PingFangSC-Medium;
+    font-size: 16px;
+    color: #4A4A4A;
+}
+.userCardListGo{
+    background-image: url("./img/right.png");
+    width: 12px;
+    height: 21px;
+    position: absolute;
+    right: 15px;
+}
+.logout{
+    width: 100%;
+    height: 44px;
+    background-color: #ffffff;
+    text-align: center;
+    line-height: 44px;
+    position: relative;
+    margin-top: 94px;
+}

@@ -23,6 +23,14 @@ export default class Header extends Component {
                 header = "任务详情";
                 navigateBack = true;
                 break;
+            case "userMessage":
+                header = "信息";
+                navigateBack = true;
+                break;
+            case "addressList":
+                header = "通讯录";
+                navigateBack = true;
+                break;
             default:
                 header = "任务认领";
                 break;
