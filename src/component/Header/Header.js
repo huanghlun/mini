@@ -33,6 +33,10 @@ export default class Header extends Component {
                 navigateBack = true;
                 header = "成功啦！";
                 break;
+            case "post":
+                navigateBack = true;
+                header = "写任务";
+                break;
             default:
                 header = "";
                 break;

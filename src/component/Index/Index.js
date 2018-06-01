@@ -1,10 +1,20 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import IndexItem from './IndexItem/IndexItem.js';
 import Selector from './Selector/Selector.js';
+import { fetchPostAPI, fetchGetAPI } from '../../api/util.js';
 
 export default class Index extends Component {
     constructor(props) {
         super(props);
+    }
+
+    componentDidMount() {
+        //fetch taskList
+        fetchGetAPI('getTaskListByType/', {
+            taskType: 0
+        }, function(res) {
+
+        })
     }
 
     render() {

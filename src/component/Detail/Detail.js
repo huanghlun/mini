@@ -65,7 +65,6 @@ export default class Detail extends Component {
 
                 <div>
                     <div className="bottom-button">
-                        {/* 点击登录直接跳转，之后要加入qq第三方登录 */}
                         <Link to={'/receive/' + item.note + '/' + item.workTime}>
                             <div className={styles.button}>
                                 确认完成

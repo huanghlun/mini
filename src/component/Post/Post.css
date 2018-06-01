@@ -1,0 +1,30 @@
+.section {
+    padding: 10px 26px 0px;
+}
+
+.section p {
+    margin-bottom: 6px;
+    font-size: 14px;
+}
+
+.input, .textarea {
+    padding: 5px 10px;
+    line-height: 1.8em;
+    border-radius: 5px;
+    width: 100%;
+    border: 1px solid rgba(151, 151, 151, 1);
+}
+
+.button {
+    color: white;
+    font-size: 20px;
+    background: url('../../assets/images/button.png') 0px 0px no-repeat;
+    background-size: cover;
+    width: 266px;
+    margin: 0 auto;
+    padding: 0px 70px;
+    text-align: center;
+    height: 55px;
+    line-height: 55px;
+}
+

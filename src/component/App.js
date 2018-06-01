@@ -9,6 +9,7 @@ import Launch from './Launch/Launch.js';
 import Detail from './Detail/Detail.js';
 import Receive from './Receive/Receive.js';
 import Finish from './Finish/Finish.js';
+import Post from './Post/Post.js';
 
 export default class App extends Component {
     constructor(props) {
@@ -35,6 +36,7 @@ export default class App extends Component {
                     <div>
                         <Route path='/:nav' component={Header} />
                         <Route path='/detail' component={Detail}/>
+                        <Route path='/post' component={Post} /> 
                         <Route path='/receive/:note/:workTime' component={Receive} />
                         <Switch>
                             <Route path='/index' component={Index}/>
