@@ -1,14 +1,20 @@
 import React, {Component} from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import styles from './Launch.css';
-import {fetchAPI} from '../../api/util.js';
+import {fetchAPI, fetchPostAPI} from '../../api/util.js';
 
 export default class Launch extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            finish: false //启动页是否完成
+            finish: false, //启动页是否完成
+            name: "",
+            password: ""
         }
+
+        this.onChangeName = this.onChangeName.bind(this);
+        this.onChangePassword = this.onChangePassword.bind(this);
+        this.onLogin = this.onLogin.bind(this);
     }
 
     componentDidMount() {
@@ -18,6 +24,29 @@ export default class Launch extends Component {
                 finish: true 
             })
         }, 2000);
+    }
+
+    onChangeName(event) {
+        this.setState({
+            name: event.target.value
+        })
+    }
+
+    onChangePassword(event) {
+        this.setState({
+            password: event.target.value
+        })
+    }
+
+    onLogin() {
+        var that = this;
+        fetchPostAPI('login/', {
+            englishName:this.state.name,
+            passWord: this.state.password
+        }, function(res) {
+            if(res.code == 0)
+                that.props.history.push('/index/'+res.data);
+        })
     }
 
     render() {
@@ -38,15 +67,14 @@ export default class Launch extends Component {
                                 <img src={require('../../assets/images/login_logo.png')} style={{maxWidth: "100%", height: "auto"}} /> 
                             </div>
                             <div style={{width: "100%", marginTop: "110px", textAlign: "center"}}>
-                                {/* 点击登录直接跳转，之后要加入qq第三方登录 */}
                                 <div className={styles.loginMessageBox}>
-                                    <input type="text" className={styles.loginEmail} placeholder="企业邮箱地址" />
-                                    <input type="text" className={styles.loginPassword} placeholder="密码" />
+                                    <input type="text" className={styles.loginEmail} placeholder="英文名" 
+                                           value={this.state.name} onChange={this.onChangeName}/>
+                                    <input type="text" className={styles.loginPassword} placeholder="密码" 
+                                           value={this.state.password} onChange={this.onChangePassword}/>
                                 </div>
                                 <div className={styles.buttonBox}>
-                                    <Link to='/index'>
-                                        <div className={styles.beginLogin}>登录</div>
-                                    </Link>
+                                    <div className={styles.beginLogin} onClick={this.onLogin}>登录</div>
                                     <Link to="/register">
                                         <div className={styles.newUser}>新用户注册</div>
                                     </Link>

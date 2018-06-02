@@ -51,12 +51,12 @@ export default class Selector extends Component {
                         })}
                 </div>
                 <div className={styles.selectTimePanel + " " + (show_time ? styles.selectedPanel : "")}>
-                    <ul>
+                    {/* <ul>
                         <li><img src="./images/yule-selected.png" className="job-icon"/></li>
                         <li><img src="./images/pinche-selected.png" className="job-icon"/></li>
                         <li><img src="./images/bangmang-selected.png" className="job-icon"/></li>
                         <li><img src="./images/yuefan-selected.png" className="job-icon"/></li>
-                    </ul>
+                    </ul> */}
                 </div>
             </div>
         )

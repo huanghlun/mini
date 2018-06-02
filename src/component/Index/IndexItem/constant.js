@@ -6,7 +6,7 @@ export const JOB_ICON = [
 ]
 
 export const JOB_ICON_NOSELECT = [
-    "./images/bangman.png",
+    "./images/bangmang.png",
     "./images/pinche.png",
     "./images/yuefan.png",
     "./images/yule.png"
@@ -15,4 +15,13 @@ export const JOB_ICON_NOSELECT = [
 export const SEX_ICON = [
     "./images/male.png",
     "./images/female.png"
+]
+
+export const SEX_AVATAR =[
+    "./images/boy.png",
+    "./images/girl.png"
+]
+
+export const JOB_STATUS = [
+    "已过期", "待认领", "执行中", "已完成"
 ]

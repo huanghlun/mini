@@ -43,14 +43,15 @@ export default class Index extends Component {
     }
 
     render() {
-        var list = this.state.taskList;
+        var list = this.state.taskList,
+            user_id = this.props.match.params.userId;
         return (
             <div className="content">
                 <Selector onSelectType={this.selectType}/>
                 {
                     list.map((item, index) => {
                         return (
-                            <IndexItem key={index} {...item} />
+                            <IndexItem key={index} {...item} userId={user_id}/>
                         )
                     })
                 }

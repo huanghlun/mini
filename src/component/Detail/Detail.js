@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import { Link } from 'react-router-dom';
-import { JOB_ICON, SEX_ICON } from '../Index/IndexItem/constant.js';
+import { JOB_ICON, SEX_ICON, JOB_STATUS } from '../Index/IndexItem/constant.js';
 import { fetchPostAPI, fetchGetAPI } from '../../api/util.js';
 import styles from './Detail.css';
 import Modal from '../Modal/Modal.js';
@@ -21,7 +21,7 @@ export default class Detail extends Component {
 
     componentDidMount() {
         //fetch detail
-        var taskId = this.props.location.search.split('?')[1];
+        var taskId = this.props.match.params.itemId;
         var that = this;
         fetchGetAPI('getTaskDetail/', {
             taskId: taskId
@@ -35,8 +35,8 @@ export default class Detail extends Component {
     }
 
     componentDidUpdate() {
-        if((JSON.stringify(this.state.item) == "{}") {
-            var taskId = this.props.location.search.split('?')[1];
+        if(JSON.stringify(this.state.item) == "{}") {
+            var taskId = this.props.match.params.itemId;;
             var that = this;
             fetchGetAPI('getTaskDetail/', {
                 taskId: taskId
@@ -98,7 +98,7 @@ export default class Detail extends Component {
                     </div>
                     <div className={styles.section}>
                         <p className={styles.sectionTitle}>状态：</p>
-                        <p className={styles.sectionDesc}>{item.state}</p>
+                        <p className={styles.sectionDesc}>{JOB_STATUS[item.status]}</p>
                     </div>
 
                     {!item.fufiller_id ? (<div>

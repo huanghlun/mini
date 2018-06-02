@@ -19,6 +19,11 @@
     height: 64px;
     width: 64px;
     border-radius: 50%;
+    background-image: url('../../assets/images/girl.jpg');
+    background-size: cover;
+}
+.boyImg {
+    background-image: url('../../assets/images/boy.jpg') !important;
 }
 .bottomBox{
     width: 100%;

@@ -23,7 +23,14 @@
     border-radius: 50%;
     position: relative;
     margin-right: 15px;
+    background-image: url('../../assets/images/girl.jpg');
+    background-size: cover;
 }
+
+.boyImg {
+    background-image: url('../../assets/images/boy.jpg') !important;
+}
+
 .userMessage{
     height: 46px;
     display: flex;

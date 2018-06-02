@@ -11,7 +11,7 @@ export default class IndexItem extends Component {
     render() {
         var item = this.props;
         return (
-            <Link to={"/detail?" + item.id}>
+            <Link to={"/detail/" + item.id + '/' + item.userId}>
                 <div className={styles.indexItem}>
                     <p className="flex flex-align-center">
                         <img src={JOB_ICON[item.task_type]} className="job_icon flex-none"/>

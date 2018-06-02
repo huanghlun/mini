@@ -15,6 +15,7 @@ export default class Header extends Component {
         var nav = this.props.match.params.nav,
             header = "",
             navigateBack = false; //是否出现回退按钮
+        console.log(nav);
         switch(nav) {
             case "index":
                 header = "任务认领";
@@ -59,6 +60,18 @@ export default class Header extends Component {
             case "registerPassword":
                 navigateBack = true;
                 header = "注册";
+                break;
+            case "finishTask":
+                navigateBack = true;
+                header = "已完成的任务";
+                break;
+            case "publishTask":
+                navigateBack = true;
+                header = "已发布的任务";
+                break;
+            case "toFinishTask":
+                navigateBack = true;
+                header = "待完成的任务";
                 break;
             default:
                 header = "";

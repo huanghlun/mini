@@ -49,7 +49,7 @@ export function fetchPostAPI(path, data, resolve, reject) {
 */
 
 export function fetchGetAPI(path, data, resolve, reject) {
-    fetch("http://111.231.245.136:8001/" + path + '?' + jsonToString(data))
+    fetch("http://111.231.245.136:80/" + path + '?' + jsonToString(data))
         .then((res) => {
             return res.json();     
         }).then((res) => {
