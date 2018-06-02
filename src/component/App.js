@@ -36,27 +36,28 @@ export default class App extends Component {
         
         return (
             <BrowserRouter history={history}>
-                <div>
-                    <Route path='/' component={Launch} exact={true}/>
-                    <Route path='/finish' component={Finish} exact={true}/>
-                    <div>
-                        <Route path='/:nav' component={Header} />
-                        <Route path='/detail' component={Detail}/>
-                        <Route path='/post' component={Post} />
-                        <Route path='/verification' component={Verification} />
-                        <Route path='/verificationFail' component={VerificationFail} />
-                        <Route path='/register' component={Register} /> 
-                        <Route path='/registerPassword' component={RegisterPassword} />
-                        <Route path='/receive/:note/:workTime' component={Receive} />
-                        <Switch>
-                            <Route path='/index' component={Index}/>
-                            <Route path='/own' component={Own} />
-                            <Route path='/userMessage' component={UserMessage} />
-                            <Route path='/addressList' component={AddressList} />
-                        </Switch>
-                        <Route path='/(index|own)' component={Tab} />
-                    </div>
-                </div>
+                <Launch />
+            {/* //     <div>
+            //         <Route path='/' component={Launch} exact={true}/>
+            //         <Route path='/finish' component={Finish} exact={true}/>
+            //         <div>
+            //             <Route path='/:nav' component={Header} />
+            //             <Route path='/detail' component={Detail}/>
+            //             <Route path='/post' component={Post} />
+            //             <Route path='/verification' component={Verification} />
+            //             <Route path='/verificationFail' component={VerificationFail} />
+            //             <Route path='/register' component={Register} /> 
+            //             <Route path='/registerPassword' component={RegisterPassword} />
+            //             <Route path='/receive/:note/:workTime' component={Receive} />
+            //             <Switch>
+            //                 <Route path='/index' component={Index}/>
+            //                 <Route path='/own' component={Own} />
+            //                 <Route path='/userMessage' component={UserMessage} />
+            //                 <Route path='/addressList' component={AddressList} />
+            //             </Switch>
+            //             <Route path='/(index|own)' component={Tab} />
+            //         </div>
+            //     </div> */}
             </BrowserRouter>
         )
     }

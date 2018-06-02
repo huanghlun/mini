@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { Link,NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import styles from './Launch.css';
 import {fetchAPI} from '../../api/util.js';
 
@@ -44,10 +44,12 @@ export default class Launch extends Component {
                                     <input type="text" className={styles.loginPassword} placeholder="密码" />
                                 </div>
                                 <div className={styles.buttonBox}>
-                                    <div className={styles.beginLogin}>登录</div>
-                                    <NavLink to="/register">
+                                    <Link to='/index'>
+                                        <div className={styles.beginLogin}>登录</div>
+                                    </Link>
+                                    <Link to="/register">
                                         <div className={styles.newUser}>新用户注册</div>
-                                    </NavLink>
+                                    </Link>
                                 </div>
                             </div>
                         </div>

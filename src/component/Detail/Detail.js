@@ -34,6 +34,22 @@ export default class Detail extends Component {
         })
     }
 
+    componentDidUpdate() {
+        if((JSON.stringify(this.state.item) == "{}") {
+            var taskId = this.props.location.search.split('?')[1];
+            var that = this;
+            fetchGetAPI('getTaskDetail/', {
+                taskId: taskId
+            }, function(res) {
+                if(res.data.length > 0) {
+                    that.setState({
+                        item: res.data[0]
+                    })
+                }
+            })
+        }
+    }
+
     onClickConfirm() {
         this.setState({
             show_modal: true
@@ -85,7 +101,7 @@ export default class Detail extends Component {
                         <p className={styles.sectionDesc}>{item.state}</p>
                     </div>
 
-                    <div>
+                    {!item.fufiller_id ? (<div>
                         <div className="bottom-button">
                             {/* <Link to={'/receive/' + item.note + '/' + item.workTime}> */}
                                 <div className={styles.button} onClick={this.onClickConfirm}>
@@ -93,7 +109,7 @@ export default class Detail extends Component {
                                 </div>
                             {/* </Link> */}
                         </div>
-                    </div>
+                    </div>) : ""}
                 </div>
                 <Modal title={"确定接受这个任务了吗？"} desc={"任务完成后完成者将得到积分×10，且双方名片可见"}
                 cancelButton={"再想想"} confirmButton={"准备好了！"} show={this.state.show_modal}
