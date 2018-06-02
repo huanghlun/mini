@@ -21,7 +21,7 @@ export default class AddressList extends Component {
                         <div className={styles.goto}>
                             查看名片 >
                         </div>
-                    </li>
+                    </li> 
                 </ul>
             </div> 
         )
