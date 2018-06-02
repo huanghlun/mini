@@ -52,6 +52,14 @@ export default class Header extends Component {
                 navigateBack = true;
                 header = " ";
                 break;
+            case "register":
+                navigateBack = true;
+                header = "注册";
+                break;
+            case "registerPassword":
+                navigateBack = true;
+                header = "注册";
+                break;
             default:
                 header = "";
                 break;

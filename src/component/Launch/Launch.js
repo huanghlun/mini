@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { Link } from 'react-router-dom';
+import { Link,NavLink } from 'react-router-dom';
 import styles from './Launch.css';
 import {fetchAPI} from '../../api/util.js';
 
@@ -39,12 +39,16 @@ export default class Launch extends Component {
                             </div>
                             <div style={{width: "100%", marginTop: "110px", textAlign: "center"}}>
                                 {/* 点击登录直接跳转，之后要加入qq第三方登录 */}
-                                <Link to='/index'>
-                                    <div className={styles.button}>
-                                        <img src={require('../../assets/images/qq.png')} style={{maxWidth: "100%", height: "auto", verticalAlign: "middle"}} /> 
-                                        <span>QQ登录</span>
-                                    </div>
-                                </Link>
+                                <div className={styles.loginMessageBox}>
+                                    <input type="text" className={styles.loginEmail} placeholder="企业邮箱地址" />
+                                    <input type="text" className={styles.loginPassword} placeholder="密码" />
+                                </div>
+                                <div className={styles.buttonBox}>
+                                    <div className={styles.beginLogin}>登录</div>
+                                    <NavLink to="/register">
+                                        <div className={styles.newUser}>新用户注册</div>
+                                    </NavLink>
+                                </div>
                             </div>
                         </div>
                     )

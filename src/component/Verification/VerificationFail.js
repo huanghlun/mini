@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {NavLink} from 'react-router-dom';
 import styles from './VerificationFail.css';
 
-export default class Verification extends Component {
+export default class VerificationFail extends Component {
     constructor(props){
         super(props);
     }

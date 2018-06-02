@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import styles from './UserMessage.css';
 
-export default class Own extends Component {
+export default class UserMessage extends Component {
     constructor(props){
         super(props);
     }
