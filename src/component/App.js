@@ -12,6 +12,8 @@ import UserMessage from './Own/userMessage.js';
 import AddressList from './Own/AddressList';
 import Finish from './Finish/Finish.js';
 import Post from './Post/Post.js';
+import Verification from './Verification/Verification.js';
+import VerificationFail from './Verification/VerificationFail.js';
 
 export default class App extends Component {
     constructor(props) {
@@ -38,7 +40,9 @@ export default class App extends Component {
                     <div>
                         <Route path='/:nav' component={Header} />
                         <Route path='/detail' component={Detail}/>
-                        <Route path='/post' component={Post} /> 
+                        <Route path='/post' component={Post} />
+                        <Route path='/verification' component={Verification} />
+                        <Route path='/verificationFail' component={VerificationFail} /> 
                         <Route path='/receive/:note/:workTime' component={Receive} />
                         <Switch>
                             <Route path='/index' component={Index}/>

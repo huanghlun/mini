@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {NavLink} from 'react-router-dom';
 import styles from './AddressList.css';
 
-export default class Own extends Component {
+export default class AddressList extends Component {
     constructor(props){
         super(props);
     }

@@ -26,7 +26,6 @@ export default class Header extends Component {
                 header = "任务详情";
                 navigateBack = true;
                 break;
-<<<<<<< HEAD
             case "userMessage":
                 header = "信息";
                 navigateBack = true;
@@ -34,7 +33,6 @@ export default class Header extends Component {
             case "addressList":
                 header = "通讯录";
                 navigateBack = true;
-=======
             case "receive":
                 navigateBack = true;
                 break;
@@ -45,7 +43,14 @@ export default class Header extends Component {
             case "post":
                 navigateBack = true;
                 header = "写任务";
->>>>>>> 1e88ec97be2f206f6a4c3636573df54ed4f6fa60
+                break;
+            case "verification":
+                navigateBack = true;
+                header = "身份验证";
+                break;
+            case "verificationFail":
+                navigateBack = true;
+                header = " ";
                 break;
             default:
                 header = "";

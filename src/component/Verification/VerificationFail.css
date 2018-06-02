@@ -1,0 +1,40 @@
+.verificationFailBox{
+    width: 100%;
+    position: relative;
+    top: 44px;
+}
+.verificationFailBox .messageBox{
+    width: 100%;
+    height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.messageBox .unsuccessful{
+    width: 100px;
+    height: 100px;
+    position: relative;
+    margin-bottom: 40px;
+}
+.messageBox .title1{
+    font-size: 18px;
+    color: #4A4A4A;
+    position: relative;
+    margin-bottom: 20px;
+}
+.messageBox .title1{
+    font-size: 16px;
+    color: #000000;
+}
+.verificationFailBox .gotoBtn{
+    width: 304px;
+    height: 52px;
+    border-radius: 100px;
+    line-height: 52px;
+    text-align: center;
+    margin: 30px auto;
+    background: #52B4EE;
+    color: #ffffff;
+    font-size: 20px;
+}

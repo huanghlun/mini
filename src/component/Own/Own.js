@@ -12,7 +12,9 @@ export default class Own extends Component {
             <div className={styles.content}>
                 <div className={styles.box}>
                     <div className={styles.userMessageBox}>
-                        <div className={styles.headImg} style={{backgroundImage:"url('http://placeholder.qiniudn.com/46x46')"}}></div>
+                        <NavLink to="/verification">
+                            <div className={styles.headImg} style={{backgroundImage:"url('http://placeholder.qiniudn.com/46x46')"}}></div>
+                        </NavLink>
                         <div className={styles.userMessage}>
                             <div className={styles.userName}>庄克</div>
                             <img className={styles.userSex} src={require("./img/female.png")} alt=""/>
