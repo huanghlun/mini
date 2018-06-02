@@ -1,18 +1,18 @@
 export const JOB_ICON = [
-    "./images/yule-selected.png",
     "./images/bangmang-selected.png",
     "./images/pinche-selected.png",
-    "./images/yuefan-selected.png"
+    "./images/yuefan-selected.png",
+    "./images/yule-selected.png"
 ]
 
 export const JOB_ICON_NOSELECT = [
-    "./images/yule.png",
-    "./images/bangmang.png",
+    "./images/bangman.png",
     "./images/pinche.png",
-    "./images/yuefan.png"
+    "./images/yuefan.png",
+    "./images/yule.png"
 ]
 
 export const SEX_ICON = [
-    "./images/female.png",
-    "./images/male.png"
+    "./images/male.png",
+    "./images/female.png"
 ]

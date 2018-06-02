@@ -33,7 +33,7 @@ export default class App extends Component {
     render() {
         
         return (
-            <BrowserRouter>
+            <BrowserRouter history={history}>
                 <div>
                     <Route path='/' component={Launch} exact={true}/>
                     <Route path='/finish' component={Finish} exact={true}/>

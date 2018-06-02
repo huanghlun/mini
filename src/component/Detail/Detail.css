@@ -1,5 +1,5 @@
 .section {
-    padding: 18px 23px;
+    padding: 24px 23px;
     border-bottom: 1px solid rgba(151, 151, 151, 0.3);
 }
 
@@ -7,7 +7,7 @@
     margin: 10px 0px;
 }
 
-.section:last-child {
+.section:last-of-type {
     border-bottom-style: none;
 }
 
@@ -40,7 +40,7 @@
     background-size: cover;
     width: 266px;
     margin: 0 auto;
-    padding: 0px 70px;
+    /* padding: 0px 70px; */
     text-align: center;
     height: 55px;
     line-height: 55px;

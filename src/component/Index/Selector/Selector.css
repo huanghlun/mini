@@ -47,12 +47,12 @@
     height: auto;
 }
 
-.selectPanel li, .selectTimePanel li {
+.selectPanel div, .selectTimePanel div {
     line-height: 1.8em;
     padding: 8px 5px;
     border-bottom: 1px solid rgba(151, 151, 151, 0.3);
 }
 
-.selectPanel li img {
+.selectPanel div img {
     vertical-align: middle;
 }

@@ -28,13 +28,10 @@ export default class Selector extends Component {
         })
     }
 
-    onSelectType(type) {
-        console.log(type);
-    }
-
     render() {
         var show_type = this.state.show_type;
         var show_time = this.state.show_time;
+        var onSelectType = this.props.onSelectType;
         var that = this;
         return (
             <div style={{position: "relative"}}>
@@ -47,17 +44,11 @@ export default class Selector extends Component {
                     </div>
                 </div>
                 <div className={styles.selectPanel + " " + (show_type ? styles.selectedPanel : "")}>
-                    <ul>
                         {JOB_ICON.map(function(val, index) {
-                            return <li key={index} onClick={() => {that.onSelectType(index)}}>
+                            return <div key={index} onClick={() => {onSelectType(index)}}>
                                 <img src={val} className="job-icon"/>
-                            </li>
+                            </div>
                         })}
-                        {/* <li><img src="./images/yule-selected.png" className="job-icon"/></li>
-                        <li><img src="./images/pinche-selected.png" className="job-icon"/></li>
-                        <li><img src="./images/bangmang-selected.png" className="job-icon"/></li>
-                        <li><img src="./images/yuefan-selected.png" className="job-icon"/></li> */}
-                    </ul>
                 </div>
                 <div className={styles.selectTimePanel + " " + (show_time ? styles.selectedPanel : "")}>
                     <ul>
