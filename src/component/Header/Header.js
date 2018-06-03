@@ -7,7 +7,6 @@ export default class Header extends Component {
     }
 
     onClickBack() {
-        console.log(history);
         history.go(-1);
     }
 
@@ -28,7 +27,7 @@ export default class Header extends Component {
                 navigateBack = true;
                 break;
             case "userMessage":
-                header = "信息";
+                header = "个人名片";
                 navigateBack = true;
                 break;
             case "addressList":
@@ -77,7 +76,7 @@ export default class Header extends Component {
                 header = "";
                 break;
         }
-        if(nav == 'own') {
+        if(nav == 'own' || nav == 'login') {
             return <div></div>
         }
         return (

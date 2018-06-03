@@ -2,10 +2,20 @@ import React, {Component} from 'react';
 import TabItem from './TabItem.js';
 import {NavLink} from 'react-router-dom';
 import styles from './Tab.css';
+import { fetchPostAPI } from '../../api/util.js';
 
 export default class Tab extends Component {
     constructor(props) {
         super(props);
+
+        this.onClickIndex = this.onClickIndex.bind(this);
+    }
+
+    onClickIndex() {
+        var path = this.props.match.params["0"];
+        if(path == 'own') {
+            
+        }
     }
 
     render() { 
@@ -15,7 +25,7 @@ export default class Tab extends Component {
         return (
             <div className={"flex flex-align-center " + styles.tab}>
                 <TabItem page={0} active={path != "own"}>
-                    <NavLink to={"/index/"+user_id}>
+                    <NavLink to={"/index/"+user_id} onClick={this.onClickIndex}>
                         {path == "own" ? <img src={require("../../assets/images/post-it.png")} style={{height:"32px", width: "32px"}} />
                         : <img src={require("../../assets/images/post-it-selected.png")} style={{height:"32px", width: "32px"}} />}
                     </NavLink>

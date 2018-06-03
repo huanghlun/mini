@@ -15,7 +15,7 @@ export default class IndexItem extends Component {
                 <div className={styles.indexItem}>
                     <p className="flex flex-align-center">
                         <img src={JOB_ICON[item.task_type]} className="job_icon flex-none"/>
-                        <span className={"flex-none " + styles.itemText}>{item.release_time}</span>
+                        <span className={"flex-none " + styles.itemText}>{item.release_time.split('T')[0]}</span>
                         <img src={SEX_ICON[this.props.gender]} className="sex_icon flex-none"/>
                     </p>
                     <p className={styles.itemTitle}>

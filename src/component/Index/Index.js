@@ -13,6 +13,7 @@ export default class Index extends Component {
         }
 
         this.selectType = this.selectType.bind(this);
+        this.selectTime = this.selectTime.bind(this);
         this.renderTaskList = this.renderTaskList.bind(this);
     }
 
@@ -35,6 +36,15 @@ export default class Index extends Component {
         })
     }
 
+    selectTime(time) {
+        var that = this;
+        fetchGetAPI('getTaskListByTime/', {
+            demandTime: time
+        }, function(res) {
+            that.renderTaskList(res.data);
+        })
+    }
+
     renderTaskList(taskList) {
         console.log(taskList);
         this.setState({
@@ -47,7 +57,7 @@ export default class Index extends Component {
             user_id = this.props.match.params.userId;
         return (
             <div className="content">
-                <Selector onSelectType={this.selectType}/>
+                <Selector onSelectType={this.selectType} onSelectTime={this.selectTime} />
                 {
                     list.map((item, index) => {
                         return (

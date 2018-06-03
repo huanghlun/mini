@@ -6,6 +6,7 @@ import Header from './Header/Header.js';
 import Index from './Index/Index.js';
 import Own from './Own/Own.js';
 import Launch from './Launch/Launch.js';
+import Login from './Launch/Login.js';
 import Detail from './Detail/Detail.js';
 import Receive from './Receive/Receive.js';
 import UserMessage from './Own/UserMessage.js';
@@ -41,7 +42,8 @@ export default class App extends Component {
             <HashRouter history={history}>
                 <div>
                     <Route path='/' component={Launch} exact={true}/>
-                    <Route path='/finish' component={Finish} exact={true}/>
+                    <Route path='/login' component={Login} />
+                    <Route path='/finish/:userId/:fulfillerId' component={Finish} exact={true}/>
                     <div>
                         <Route path='/:nav' component={Header} />
                         <Route path='/detail/:itemId/:userId' component={Detail}/>

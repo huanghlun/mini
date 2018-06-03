@@ -37,7 +37,7 @@ export default class PublishTask extends Component {
                 {
                     list.map((item, index) => {
                         return (
-                            <IndexItem key={index} {...item} />
+                            <IndexItem key={index} {...item} userId={this.props.match.params.userId}/>
                         )
                     })
                 }

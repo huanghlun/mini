@@ -82,3 +82,7 @@
     font-size: 14px;
     color: #9B9B9B;
 }
+
+input:focus {
+    outline-style: none;
+}

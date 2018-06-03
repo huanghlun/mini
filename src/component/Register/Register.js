@@ -14,7 +14,9 @@ export default class Register extends Component {
             englishName: "",
             passWord: "",
             confirmPassword: "",
-            show_modal: false
+            show_modal: false,
+            modalTitle: "",
+            modalDesc: ""
         }
 
         this.onChangeName = this.onChangeName.bind(this);
@@ -58,19 +60,37 @@ export default class Register extends Component {
     }
 
     onSubmit(){
+        var that = this;
         if(this.isValid()) {
             fetchPostAPI('register/', {
                 workNo: this.state.workNo,
                 englishName: this.state.englishName,
-                passWord: this.state.englishName
+                passWord: this.state.passWord
             }, function(res) {
                 if(res.code == 0) {
-                    this.props.history.push('/index/' + res.data);
+                    if(localStorage) {
+                        localStorage.setItem('userId', res.data);
+                    }
+                    that.props.history.push('/index/' + res.data);
+                } else if(res.code == -1) {
+                    that.setState({
+                        show_modal: true,
+                        modalTitle: "认证失败",
+                        modalDesc: "员工不存在，请确认工号及英文名输入正确"
+                    })
+                } else if(res.code == 1) {
+                    that.setState({
+                        show_modal: true,
+                        modalTitle: "注册失败",
+                        modalDesc: "员工账号已存在，请直接登录"
+                    })
                 }
             })
         } else {
             this.setState({
-                show_modal: true
+                show_modal: true,
+                modalTitle: "注册失败",
+                modalDesc: "输入不能为空且两次密码输入须一致"
             })
         }
     }
@@ -89,13 +109,13 @@ export default class Register extends Component {
                         value={this.state.englishName} onChange={this.onChangeName}/>
                     <input type="text" placeholder="工卡号" className={styles.inputEmail + " " + styles.card} 
                         value={this.state.workNo} onChange={this.onChangeWorkNo} />
-                    <input type="text" placeholder="设置密码（6位以上）" className={styles.inputEmail + " " + styles.password} 
+                    <input type="password" placeholder="设置密码（6位以上）" className={styles.inputEmail + " " + styles.password} 
                         value={this.state.password} onChange={this.onChangePassword} />
-                    <input type="text" placeholder="确认密码" className={styles.inputEmail + " " + styles.password} 
+                    <input type="password" placeholder="确认密码" className={styles.inputEmail + " " + styles.password} 
                         value={this.state.password} onChange={this.onChangeConfirmPassword} />
                     <div className={styles.beginButton} onClick={this.onSubmit}>认证并注册</div>
                 </div> 
-                <Modal title={"注册失败"} desc={"输入字段不能为空且两次密码输入需一致"}
+                <Modal title={this.state.modalTitle} desc={this.state.modalDesc}
                 cancelButton={"取消"} confirmButton={"重新输入"} show={this.state.show_modal}
                 cancelHandler={this.cancelHandler} confirmHandler={this.cancelHandler}/>
             </div>

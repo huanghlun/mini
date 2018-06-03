@@ -16,7 +16,10 @@ export default class Finish extends Component {
             descriptionPub: "",
             descriptionSec: "",
             endTime: "", 
-            show_modal: false
+            show_modal: false,
+            modalTitle: "",
+            modalDesc: "",
+            confirmHandler: new Function()
         }
 
         this.onSelectType = this.onSelectType.bind(this);
@@ -64,25 +67,58 @@ export default class Finish extends Component {
         })
     }
 
+    isValid() {
+        var that = this;
+        var taskType = that.state.taskType,
+            taskTitle = that.state.taskTitle,
+            descriptionPub = that.state.descriptionPub,
+            descriptionSec = that.state.descriptionSec,
+            endTime = that.state.endTime;
+
+        if(taskType != 4 && taskTitle != "" && taskTitle.length <= 15 &&
+           descriptionPub != "" && descriptionSec != "" && endTime != "")
+            return true;
+
+        return false;
+    }
+
     submitForm(){
         var that = this;
         fetchPostAPI('publishTask/', {
-            releaseId: that.props.params.userId,
+            releaserId: that.props.match.params.userId,
             taskType: that.state.taskType,
             taskTitle: that.state.taskTitle,
             descriptionPub: that.state.descriptionPub,
             descriptionSec: that.state.descriptionSec,
             endTime: that.state.endTime,
-            taskPlace: ""
+            taskPlace: "tencent"
         }, function(res) {
-            that.props.history.push('/index/'+that.props.params.userId);
+            if(res.code == 0) {
+                that.props.history.push('/index/'+that.props.match.params.userId);
+            }
+            // 
         })
     }
 
     showModal() {
-        this.setState({
-            show_modal: true
-        })
+
+        if(!this.isValid()) {
+            this.setState({
+                show_modal: true,
+                modalTitle: "发布失败",
+                modalDesc: "输入框不能为空且类别不能为空，标题不能超过15个字",
+                confirmHandler: this.cancelHandler.bind(this) 
+            })
+        } else {
+            this.setState({
+                show_modal: true,
+                modalTitle: "是否确认发布？",
+                modalDesc: "任务完成后完成者将得到积分×10，且双方名片可见",
+                confirmHandler: this.submitForm.bind(this) 
+            })
+        }
+
+        
     }
 
     cancelHandler() {
@@ -133,16 +169,16 @@ export default class Finish extends Component {
                 </div>
 
                 <div>
-                    <div className="bottom-button"  style={{bottom: "10px"}}>
+                    <div style={{marginTop: "20px"}}>
                         <div className={styles.button} onClick={this.showModal}>
                             填好了发布
                         </div>
                     </div>
                 </div>
             </div>
-            <Modal title={"是否确认发布？"} desc={"任务完成后完成者将得到积分×10，且双方名片可见"}
+            <Modal title={this.state.modalTitle} desc={this.state.modalDesc}
                 cancelButton={"取消"} confirmButton={"确认"} show={this.state.show_modal}
-                cancelHandler={this.cancelHandler} confirmHandler={this.submitForm}/>
+                cancelHandler={this.cancelHandler} confirmHandler={this.state.confirmHandler}/>
             </div>
         )
     }

@@ -50,11 +50,6 @@ export default class Own extends Component {
                             <div className={styles.userWrite}>{user.english_name}</div>
                         </div>
                     </div>
-                    <div className={styles.additionalMessageBox}>
-                        {/* <div>积分：97</div>
-                        <div className={styles.space}>|</div>
-                        <div>排名：239</div> */}
-                    </div>
                 </div>
                 
                 <div className={styles.taskBox}>
@@ -103,11 +98,13 @@ export default class Own extends Component {
                     </Link>
                 </div>
                 
-                <Link to='/'>
+                <Link to='/login'>
                     <div className={styles.logout}>
                         退出登录
                     </div>
                 </Link>
+
+                <div className={styles.mask}></div>
             </div> 
         )
     }

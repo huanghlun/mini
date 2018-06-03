@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {NavLink} from 'react-router-dom';
+import {NavLink, Link} from 'react-router-dom';
 import styles from './AddressList.css';
 import { fetchGetAPI } from '../../api/util';
 
@@ -31,17 +31,20 @@ export default class AddressList extends Component {
                     {
                         this.state.helper.map((val, index) => {
                             return (
-                                <li key={index}>
-                                    <div className={styles.userImg} style={{backgroundImage:"url('http://placeholder.qiniudn.com/64x64')"}}></div>
-                                    <div className={styles.userMsgBox}>
-                                        <div className={styles.userName}>{val.chinese_name}</div>
-                                        <img className={styles.userSex} src={require("./img/female.png")}></img>
-                                        <div className={styles.userWrite}>{val.english_name}</div>
-                                    </div>
-                                    <div className={styles.goto}>
-                                        查看名片 >
-                                    </div>
-                                </li> 
+                                <Link key={index} to={'/userMessage/'+val.gender+'/'+val.chinese_name+'/'+val.english_name+'/'+val.qq_no+'/'+val.tel_no}>
+                                    <li>
+                                        {val.gender ? <div className={styles.userImg} ></div> :
+                                        <div className={styles.userImgBoy} ></div>}
+                                        <div className={styles.userMsgBox}>
+                                                <div className={styles.userName}>{val.chinese_name}</div>
+                                                <img className={styles.userSex} src={val.gender ? require("./img/female.png") : require("../../assets/images/male.png")}></img>
+                                                <div className={styles.userWrite}>{val.english_name}</div>
+                                        </div>
+                                        <div className={styles.goto}>
+                                            查看名片 >
+                                        </div>
+                                    </li> 
+                                </Link>
                             )
                         })
                     }

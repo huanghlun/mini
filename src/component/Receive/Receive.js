@@ -23,7 +23,7 @@ export default class Receive extends Component {
                     <p>{note}</p>
                 </div>
                 <div className={styles.receiveFooter}>
-                    别忘了在{workTime}）完成任务哦！
+                    别忘了在{workTime}完成任务哦！
                 </div>
 
                 <div>
